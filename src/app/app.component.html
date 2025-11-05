@@ -1,0 +1,53 @@
+<RadSideDrawer>
+  <StackLayout tkDrawerContent class="drawer-content">
+    <GridLayout class="drawer-header" rows="auto, auto" columns="auto, *">
+      <Image row="0" col="0" rowSpan="2" src="~/assets/images/user-avatar.png" class="drawer-header-image"></Image>
+      <Label row="0" col="1" text="NativeScript App" class="drawer-header-title"></Label>
+      <Label row="1" col="1" text="Angular Drawer Navigation" class="drawer-header-subtitle"></Label>
+    </GridLayout>
+
+    <StackLayout class="drawer-list">
+      <GridLayout 
+        class="drawer-list-item" 
+        [class.selected]="isPageSelected('/home')"
+        (tap)="onNavItemTap('/home')">
+        <Label text="&#xf015;" class="drawer-list-item-icon fa"></Label>
+        <Label text="Home" class="drawer-list-item-text"></Label>
+      </GridLayout>
+
+      <GridLayout 
+        class="drawer-list-item" 
+        [class.selected]="isPageSelected('/featured')"
+        (tap)="onNavItemTap('/featured')">
+        <Label text="&#xf005;" class="drawer-list-item-icon fa"></Label>
+        <Label text="Featured" class="drawer-list-item-text"></Label>
+      </GridLayout>
+
+      <GridLayout 
+        class="drawer-list-item" 
+        [class.selected]="isPageSelected('/search')"
+        (tap)="onNavItemTap('/search')">
+        <Label text="&#xf002;" class="drawer-list-item-icon fa"></Label>
+        <Label text="Search" class="drawer-list-item-text"></Label>
+      </GridLayout>
+
+      <GridLayout 
+        class="drawer-list-item" 
+        [class.selected]="isPageSelected('/products')"
+        (tap)="onNavItemTap('/products')">
+        <Label text="&#xf07a;" class="drawer-list-item-icon fa"></Label>
+        <Label text="Products" class="drawer-list-item-text"></Label>
+      </GridLayout>
+
+      <GridLayout 
+        class="drawer-list-item" 
+        [class.selected]="isPageSelected('/settings')"
+        (tap)="onNavItemTap('/settings')">
+        <Label text="&#xf013;" class="drawer-list-item-icon fa"></Label>
+        <Label text="Settings" class="drawer-list-item-text"></Label>
+      </GridLayout>
+    </StackLayout>
+  </StackLayout>
+
+  <page-router-outlet tkMainContent></page-router-outlet>
+</RadSideDrawer>

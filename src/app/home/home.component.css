@@ -1,0 +1,138 @@
+/* Common styles */
+.page {
+  background-color: #f5f5f5;
+  padding: 0;
+}
+
+.welcome-section {
+  background-color: #3f51b5;
+  padding: 20;
+  margin-bottom: 20;
+}
+
+.platform-message {
+  font-size: 16;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10;
+  font-weight: bold;
+}
+
+.h1 {
+  font-size: 24;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.h3 {
+  font-size: 18;
+  color: #c5cae9;
+}
+
+.user-section {
+  background-color: #ffffff;
+  margin: 10 15;
+  padding: 15;
+  border-radius: 8;
+}
+
+.user-info {
+  padding: 10;
+}
+
+.user-avatar {
+  width: 50;
+  height: 50;
+  border-radius: 25;
+  margin-right: 15;
+}
+
+.user-details {
+  vertical-align: center;
+}
+
+.user-name {
+  font-size: 18;
+  font-weight: bold;
+  color: #212121;
+}
+
+.user-email {
+  font-size: 14;
+  color: #757575;
+  margin-top: 5;
+}
+
+.featured-section {
+  background-color: #ffffff;
+  margin: 10 15;
+  padding: 15;
+  border-radius: 8;
+}
+
+.section-title {
+  font-size: 20;
+  font-weight: bold;
+  color: #212121;
+  margin-bottom: 15;
+}
+
+.product-item {
+  padding: 10;
+  border-bottom-width: 1;
+  border-bottom-color: #e0e0e0;
+  margin-bottom: 10;
+}
+
+.product-image {
+  width: 60;
+  height: 60;
+  border-radius: 8;
+  margin-right: 15;
+}
+
+.product-info {
+  vertical-align: center;
+}
+
+.product-name {
+  font-size: 16;
+  font-weight: bold;
+  color: #212121;
+}
+
+.product-description {
+  font-size: 14;
+  color: #757575;
+  margin-top: 5;
+}
+
+.product-category {
+  font-size: 12;
+  color: #3f51b5;
+  margin-top: 5;
+}
+
+.product-price {
+  font-size: 18;
+  font-weight: bold;
+  color: #4caf50;
+  vertical-align: center;
+}
+
+.actions-section {
+  background-color: #ffffff;
+  margin: 10 15;
+  padding: 15;
+  border-radius: 8;
+}
+
+.action-buttons {
+  margin-top: 10;
+}
+
+.btn {
+  margin: 5;
+  padding: 12;
+  font-size: 14;
+}

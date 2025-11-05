@@ -1,0 +1,53 @@
+<ActionBar [title]="product?.name" class="action-bar">
+  <NavigationButton (tap)="onBackTap()" text="Back" android.systemIcon="ic_menu_back" ios.systemIcon="4"></NavigationButton>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="page" *ngIf="product">
+    <!-- Product Image -->
+    <Image [src]="product.image" class="product-hero-image"></Image>
+    
+    <!-- Android-specific message -->
+    <Label [text]="androidSpecificMessage" class="android-message" *ngIf="androidSpecificMessage"></Label>
+    
+    <!-- Product Info -->
+    <StackLayout class="product-info-section">
+      <Label [text]="product.name" class="product-title"></Label>
+      <Label [text]="product.category" class="product-category-tag"></Label>
+      <Label [text]="product.description" class="product-description"></Label>
+      <Label [text]="'$' + product.price" class="product-price-large"></Label>
+    </StackLayout>
+
+    <!-- Quantity Selector -->
+    <StackLayout class="quantity-section">
+      <Label text="Quantity" class="section-title"></Label>
+      <GridLayout rows="auto" columns="auto, *, auto" class="quantity-selector">
+        <Button text="-" class="quantity-btn" row="0" col="0" (tap)="onQuantityChange(-1)"></Button>
+        <Label [text]="quantity" class="quantity-display" row="0" col="1"></Label>
+        <Button text="+" class="quantity-btn" row="0" col="2" (tap)="onQuantityChange(1)"></Button>
+      </GridLayout>
+      <Label [text]="'Total: $' + totalPrice" class="total-price"></Label>
+    </StackLayout>
+
+    <!-- Action Buttons -->
+    <StackLayout class="action-section">
+      <Button text="Add to Cart" class="btn btn-outline" (tap)="onAddToCart()"></Button>
+      <Button text="Buy Now" class="btn btn-primary" (tap)="onBuyNow()"></Button>
+    </StackLayout>
+
+    <!-- Product Details -->
+    <StackLayout class="details-section">
+      <Label text="Product Details" class="section-title"></Label>
+      <GridLayout rows="auto, auto, auto" columns="auto, *" class="details-grid">
+        <Label text="Price:" class="detail-label" row="0" col="0"></Label>
+        <Label [text]="'$' + product.price" class="detail-value" row="0" col="1"></Label>
+        
+        <Label text="Category:" class="detail-label" row="1" col="0"></Label>
+        <Label [text]="product.category" class="detail-value" row="1" col="1"></Label>
+        
+        <Label text="Product ID:" class="detail-label" row="2" col="0"></Label>
+        <Label [text]="product.id" class="detail-value" row="2" col="1"></Label>
+      </GridLayout>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

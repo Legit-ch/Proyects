@@ -1,0 +1,64 @@
+@import '~@nativescript/theme/css/core.css';
+@import '~@nativescript/theme/css/blue.css';
+
+/* Drawer styles */
+.drawer-content {
+  background-color: #ffffff;
+}
+
+.drawer-header {
+  padding: 20 16;
+  background-color: #3f51b5;
+  margin-bottom: 10;
+}
+
+.drawer-header-image {
+  width: 50;
+  height: 50;
+  border-radius: 25;
+  margin-right: 16;
+}
+
+.drawer-header-title {
+  font-size: 18;
+  font-weight: bold;
+  color: #ffffff;
+  vertical-align: center;
+}
+
+.drawer-header-subtitle {
+  font-size: 14;
+  color: #c5cae9;
+  vertical-align: center;
+}
+
+.drawer-list-item {
+  padding: 16;
+  border-bottom-width: 1;
+  border-bottom-color: #e0e0e0;
+}
+
+.drawer-list-item.selected {
+  background-color: #e8eaf6;
+}
+
+.drawer-list-item-icon {
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
+  font-size: 20;
+  color: #757575;
+  margin-right: 16;
+  horizontal-align: left;
+  vertical-align: center;
+}
+
+.drawer-list-item-text {
+  font-size: 16;
+  color: #212121;
+  margin-left: 50;
+  vertical-align: center;
+}
+
+.drawer-list-item.selected .drawer-list-item-icon,
+.drawer-list-item.selected .drawer-list-item-text {
+  color: #3f51b5;
+}

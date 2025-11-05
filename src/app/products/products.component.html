@@ -1,0 +1,47 @@
+<ActionBar title="Products" class="action-bar">
+  <NavigationButton (tap)="onDrawerButtonTap()" android.systemIcon="ic_menu_slideshow" ios.systemIcon="4"></NavigationButton>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="page">
+    <!-- Category Filter -->
+    <ScrollView orientation="horizontal" class="category-scroll">
+      <StackLayout orientation="horizontal" class="category-container">
+        <Button 
+          *ngFor="let category of categories"
+          [text]="category"
+          [class]="'category-btn ' + (selectedCategory === category ? 'selected' : '')"
+          (tap)="onCategoryTap(category)">
+        </Button>
+      </StackLayout>
+    </ScrollView>
+
+    <!-- Products List (ngFor requirement) -->
+    <StackLayout class="products-container">
+      <GridLayout 
+        *ngFor="let product of filteredProducts" 
+        rows="auto" 
+        columns="auto, *, auto" 
+        class="product-item"
+        (tap)="onProductTap(product)">
+        
+        <Image [src]="product.image" class="product-image" row="0" col="0"></Image>
+        <StackLayout row="0" col="1" class="product-info">
+          <Label [text]="product.name" class="product-name"></Label>
+          <Label [text]="product.description" class="product-description"></Label>
+          <Label [text]="product.category" class="product-category"></Label>
+        </StackLayout>
+        <StackLayout row="0" col="2" class="product-price-container">
+          <Label [text]="'$' + product.price" class="product-price"></Label>
+          <Button text="View" class="btn-view"></Button>
+        </StackLayout>
+      </GridLayout>
+    </StackLayout>
+
+    <!-- Empty State -->
+    <StackLayout *ngIf="filteredProducts.length === 0" class="empty-state">
+      <Label text="No products found" class="empty-message"></Label>
+      <Label text="Try selecting a different category" class="empty-hint"></Label>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

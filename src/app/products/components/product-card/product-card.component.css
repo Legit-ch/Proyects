@@ -1,0 +1,61 @@
+.product-card {
+  background-color: #ffffff;
+  border-radius: 12;
+  padding: 16;
+  margin: 8;
+  border-width: 1;
+  border-color: #e0e0e0;
+}
+
+.card-image {
+  width: 70;
+  height: 70;
+  border-radius: 8;
+  margin-right: 16;
+}
+
+.card-content {
+  vertical-align: center;
+}
+
+.card-title {
+  font-size: 16;
+  font-weight: bold;
+  color: #212121;
+  margin-bottom: 4;
+}
+
+.card-description {
+  font-size: 14;
+  color: #757575;
+  margin-bottom: 8;
+}
+
+.card-category {
+  font-size: 12;
+  color: #3f51b5;
+  background-color: #e8eaf6;
+  padding: 2 8;
+  border-radius: 10;
+}
+
+.card-actions {
+  vertical-align: center;
+  text-align: center;
+}
+
+.card-price {
+  font-size: 18;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 8;
+}
+
+.btn-add-cart {
+  background-color: #ff5722;
+  color: #ffffff;
+  padding: 6 12;
+  border-radius: 6;
+  font-size: 12;
+  border-width: 0;
+}

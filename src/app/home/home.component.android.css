@@ -1,0 +1,37 @@
+/* Android-specific styles */
+.welcome-section {
+  background-color: #4caf50; /* Android green */
+  elevation: 4;
+}
+
+.user-section {
+  elevation: 2;
+  margin: 16 16;
+}
+
+.featured-section {
+  elevation: 2;
+  margin: 16 16;
+}
+
+.actions-section {
+  elevation: 2;
+  margin: 16 16;
+}
+
+.product-item {
+  background-color: #fafafa;
+  elevation: 1;
+  border-radius: 4;
+}
+
+.btn {
+  border-radius: 4;
+  text-transform: uppercase;
+}
+
+.platform-message {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 8 16;
+  border-radius: 20;
+}

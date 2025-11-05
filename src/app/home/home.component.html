@@ -1,0 +1,58 @@
+<ActionBar title="Home" class="action-bar">
+  <NavigationButton (tap)="onDrawerButtonTap()" android.systemIcon="ic_menu_slideshow" ios.systemIcon="4"></NavigationButton>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="page">
+    <!-- Welcome Section -->
+    <StackLayout class="welcome-section">
+      <Label [text]="platformMessage" class="platform-message"></Label>
+      <Label text="Welcome to your NativeScript App!" class="h1 text-center"></Label>
+      <Label text="Discover amazing products and features" class="h3 text-center m-10"></Label>
+    </StackLayout>
+
+    <!-- User Info Section -->
+    <StackLayout class="user-section" *ngIf="currentUser$ | async as user">
+      <GridLayout rows="auto" columns="auto, *" class="user-info">
+        <Image [src]="user.avatar" class="user-avatar" row="0" col="0"></Image>
+        <StackLayout row="0" col="1" class="user-details">
+          <Label [text]="'Hello, ' + user.name" class="user-name"></Label>
+          <Label [text]="user.email" class="user-email"></Label>
+        </StackLayout>
+      </GridLayout>
+    </StackLayout>
+
+    <!-- Featured Products Section (ngFor requirement #7) -->
+    <StackLayout class="featured-section">
+      <Label text="Featured Products" class="section-title"></Label>
+      <StackLayout>
+        <GridLayout 
+          *ngFor="let product of featuredProducts" 
+          rows="auto" 
+          columns="auto, *, auto" 
+          class="product-item"
+          (tap)="onProductTap(product)">
+          
+          <Image [src]="product.image" class="product-image" row="0" col="0"></Image>
+          <StackLayout row="0" col="1" class="product-info">
+            <Label [text]="product.name" class="product-name"></Label>
+            <Label [text]="product.description" class="product-description"></Label>
+            <Label [text]="product.category" class="product-category"></Label>
+          </StackLayout>
+          <Label [text]="'$' + product.price" class="product-price" row="0" col="2"></Label>
+        </GridLayout>
+      </StackLayout>
+    </StackLayout>
+
+    <!-- Quick Actions -->
+    <StackLayout class="actions-section">
+      <Label text="Quick Actions" class="section-title"></Label>
+      <GridLayout rows="auto, auto" columns="*, *" class="action-buttons">
+        <Button text="View All Products" class="btn btn-primary" row="0" col="0"></Button>
+        <Button text="Search Products" class="btn btn-outline" row="0" col="1"></Button>
+        <Button text="View Featured" class="btn btn-outline" row="1" col="0"></Button>
+        <Button text="Settings" class="btn btn-outline" row="1" col="1"></Button>
+      </GridLayout>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

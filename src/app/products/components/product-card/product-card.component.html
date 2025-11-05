@@ -1,0 +1,14 @@
+<GridLayout rows="auto" columns="auto, *, auto" class="product-card" (tap)="onProductTap()">
+  <Image [src]="product.image" class="card-image" row="0" col="0"></Image>
+  
+  <StackLayout row="0" col="1" class="card-content">
+    <Label [text]="product.name" class="card-title"></Label>
+    <Label [text]="product.description" class="card-description"></Label>
+    <Label [text]="product.category" class="card-category"></Label>
+  </StackLayout>
+  
+  <StackLayout row="0" col="2" class="card-actions" *ngIf="showActions">
+    <Label [text]="'$' + product.price" class="card-price"></Label>
+    <Button text="Add to Cart" class="btn-add-cart" (tap)="onAddToCart()" *ngIf="showActions"></Button>
+  </StackLayout>
+</GridLayout>
